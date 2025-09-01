@@ -1,0 +1,220 @@
+<!--Note:The template file will be copied to a new file. When you change the code of the template file you can create new file with this base code. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upwork Earnings Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f5f7;
+      margin: 0;
+      padding: 0;
+    }
+    .dashboard {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    .username {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .status {
+      background: #14a800;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    h2 {
+      color: #14a800;
+      margin-bottom: 20px;
+    }
+    .earnings-box {
+      background: #e9f9ee;
+      border: 1px solid #d1f0d8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .earnings-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .earnings-label {
+      font-weight: bold;
+      color: #333;
+    }
+    .earnings-value {
+      font-size: 22px;
+      font-weight: bold;
+      color: #14a800;
+    }
+    .withdraw-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 18px;
+      background: #0073e6;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    .withdraw-btn:hover {
+      background: #005bb5;
+    }
+    .first-earning {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #f9fafb;
+    }
+    tr:hover {
+      background: #f1fdf5;
+    }
+    .payment-method {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9fafb;
+    }
+    .payment-method h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .add-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #14a800;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    .add-btn:hover {
+      background: #118f00;
+    }
+    .note {
+      margin-top: 20px;
+      background: #fdecea;
+      color: #a94442;
+      border: 1px solid #f5c6cb;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .note strong {
+      color: #a94442;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- Profile Header -->
+    <div class="header">
+      <div class="username">👤 Nameah</div>
+      <div class="status">Active</div>
+    </div>
+
+    <!-- Earnings -->
+    <h2>My Earnings</h2>
+    <div class="earnings-box">
+      <div class="earnings-row">
+        <div class="earnings-label">Total Earnings (USD)</div>
+        <div class="earnings-value">$50</div>
+      </div>
+      <div class="earnings-row">
+        <div class="earnings-label">Converted to PHP</div>
+        <div class="earnings-value">₱2,800</div>
+      </div>
+      <small style="color:#555;">Conversion rate: $1 = ₱56.00</small><br>
+      
+      <!-- Withdraw Button -->
+      <button class="withdraw-btn" onclick="withdrawAlert()">💵 Withdraw Earnings</button>
+    </div>
+
+    <!-- First Earning Badge -->
+    <div class="first-earning">
+      🎉 Congratulations, Nameah! You just made your first earning of $50!
+    </div>
+
+    <!-- Recent Transactions -->
+    <h3>Recent Transactions</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sep 1, 2025</td>
+          <td>First Project Completed</td>
+          <td>$50</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Payment Method -->
+    <div class="payment-method">
+      <h3>Payment Method</h3>
+      <p>No GCash number added.</p>
+      <a href="#" class="add-btn">➕ Add GCash Number</a>
+    </div>
+
+    <!-- Important Note -->
+    <div class="note">
+      ⚠️ <strong>Note:</strong> You need to pay for your activation pin of <strong>₱300</strong> before you can withdraw your money. <br><br>
+      👉 Please contact your <strong>project manager</strong> for the payment.
+    </div>
+
+  </div>
+
+  <script>
+    function withdrawAlert() {
+      alert("⚠️ You need to pay ₱300 for your activation pin before you can withdraw your money.\n\n👉 Please contact your project manager for payment.");
+    }
+  </script>
+
+</body>
+</html>
